@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI LeadGen Pro — B2B Lead Generation &amp; Website Audit System</title>
+<meta name="description" content="Find local businesses worldwide, audit their websites, score the opportunity and generate AI outreach — dynamic targeting, no hardcoded locations.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #b81224; --red-soft: #ffe3e6; --ink: #17171a;
+    --bg: #0f0f11; --card: #1a1a1d; --line: #2a2a2e;
+    --muted: #9a948f; --text: #e8e4df; --blue: #4da3ff; --green: #46c98a;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Segoe UI', system-ui, Arial, sans-serif;
+    line-height: 1.6;
+    background-image: radial-gradient(circle at 15% 10%, rgba(184,18,36,.14), transparent 40%),
+                      radial-gradient(circle at 85% 90%, rgba(77,163,255,.08), transparent 40%);
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--red); box-shadow: 0 0 14px var(--red); }
+  nav a.cta, .cta {
+    background: var(--red); color: #fff; text-decoration: none;
+    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 800;
+    display: inline-block; transition: filter .15s;
+  }
+  .cta:hover, nav a.cta:hover { filter: brightness(1.15); }
+  .hero { text-align: center; padding: 78px 0 60px; }
+  .eyebrow {
+    color: var(--red); font-size: 12px; font-weight: 900;
+    letter-spacing: 2.4px; text-transform: uppercase; margin-bottom: 14px;
+  }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.12; letter-spacing: -.5px; }
+  h1 .accent { color: var(--red); }
+  .hero p.lead { color: var(--muted); max-width: 640px; margin: 20px auto 30px; font-size: 17px; }
+  .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ghost {
+    border: 1px solid var(--line); color: var(--text); text-decoration: none;
+    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  }
+  .ghost:hover { border-color: var(--red); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 34px 0; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 24px 22px;
+  }
+  .card .icon {
+    width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+    background: var(--red-soft); color: var(--red); font-size: 19px; margin-bottom: 14px;
+  }
+  .card h3 { font-size: 15.5px; margin-bottom: 7px; }
+  .card p { color: var(--muted); font-size: 13.5px; }
+  h2 { font-size: clamp(24px, 4vw, 32px); text-align: center; margin: 58px 0 6px; }
+  .section-sub { text-align: center; color: var(--muted); font-size: 14.5px; margin-bottom: 30px; }
+  .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .step {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 15px; text-align: center; position: relative;
+  }
+  .step b { display: block; color: var(--red); font-size: 12px; letter-spacing: 1.5px; margin-bottom: 6px; }
+  .step strong { font-size: 14px; display: block; }
+  .step span { color: var(--muted); font-size: 12px; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 18px; }
+  .pill {
+    border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px;
+    font-size: 12.5px; color: var(--muted); background: var(--card);
+  }
+  .pill.create { color: var(--blue); border-color: #274a6b; }
+  .pill.recover { color: #ff8794; border-color: #5c2029; }
+  .pill.maintain { color: #ffb84d; border-color: #5c4520; }
+  .pill.none { color: var(--green); border-color: #1f4a37; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 34px; }
+  .stat { text-align: center; padding: 18px 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  .stat b { font-size: 26px; display: block; }
+  .stat span { color: var(--muted); font-size: 12px; }
+  footer {
+    margin-top: 70px; border-top: 1px solid var(--line);
+    padding: 26px 0 40px; color: var(--muted); font-size: 13px; text-align: center;
+  }
+  footer a { color: var(--red); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="brand"><span class="dot"></span>AI LeadGen Pro</div>
+    <a class="cta" href="https://github.com/MuhammadWaleed6/ai-leadgen-pro" target="_blank" rel="noopener">View on GitHub</a>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">B2B Lead Generation &amp; Website Audit</div>
+    <h1>Find businesses that <span class="accent">need a website</span> — anywhere in the world.</h1>
+    <p class="lead">
+      Dynamic city/country/category targeting — pick any filter and it fetches exactly that.
+      Every lead is geo-verified, website-audited, opportunity-classified and ranked,
+      with AI-personalised outreach ready to send.
+    </p>
+    <div class="hero-actions">
+      <a class="cta" href="https://github.com/MuhammadWaleed6/ai-leadgen-pro" target="_blank" rel="noopener">Get the code</a>
+      <a class="ghost" href="#how">How it works</a>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="card"><div class="icon">◎</div><h3>Dynamic targeting</h3>
+      <p>Country, city, category and limit are all filters — no hardcoded locations. Verified with live runs in Leeds, Manchester and Lahore.</p></div>
+    <div class="card"><div class="icon">🛡</div><h3>Geo-verified results</h3>
+      <p>A location-relevance guard rejects search results from the wrong country — IP-localised junk never pollutes your database.</p></div>
+    <div class="card"><div class="icon">Audit</div><h3>40+ point website audit</h3>
+      <p>Mobile, performance, design, conversion and SEO scores plus technology detection for every discovered site.</p></div>
+    <div class="card"><div class="icon">✦</div><h3>AI outreach</h3>
+      <p>Personalised opener messages generated from each business's actual audit problems (Groq / OpenAI / offline fallback).</p></div>
+    <div class="card"><div class="icon">⇩</div><h3>CSV &amp; Excel exports</h3>
+      <p>Formatted exports with scores, problems and outreach copy — filtered to actionable prospects only.</p></div>
+    <div class="card"><div class="icon">▦</div><h3>Secured dashboard</h3>
+      <p>Flask control room with login protection, live pipeline control and opportunity filters — run it on your own machine or LAN.</p></div>
+  </div>
+
+  <h2 id="how">Five-stage pipeline</h2>
+  <p class="section-sub">Discovery → audit → scoring → AI → export, in one command or from the dashboard.</p>
+  <div class="pipeline">
+    <div class="step"><b>01</b><strong>Discover</strong><span>OSM, search engines &amp; directories</span></div>
+    <div class="step"><b>02</b><strong>Audit</strong><span>Crawl &amp; score every website</span></div>
+    <div class="step"><b>03</b><strong>Classify</strong><span>Create / recover / maintain</span></div>
+    <div class="step"><b>04</b><strong>Analyse</strong><span>AI outreach per business</span></div>
+    <div class="step"><b>05</b><strong>Export</strong><span>CSV, Excel &amp; Telegram alerts</span></div>
+  </div>
+
+  <div class="pill-row">
+    <span class="pill create">CREATE — no website yet</span>
+    <span class="pill recover">RECOVER — site is down</span>
+    <span class="pill maintain">MAINTAIN — site needs work</span>
+    <span class="pill none">NONE — healthy, skip</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>123</b><span>passing tests</span></div>
+    <div class="stat"><b>194</b><span>countries selectable</span></div>
+    <div class="stat"><b>40+</b><span>audit checks</span></div>
+    <div class="stat"><b>0</b><span>API keys required to start</span></div>
+  </div>
+</div>
+
+<footer>
+  Built with Python, Flask, SQLite, Playwright &amp; BeautifulSoup ·
+  <a href="https://github.com/MuhammadWaleed6/ai-leadgen-pro" target="_blank" rel="noopener">github.com/MuhammadWaleed6/ai-leadgen-pro</a>
+</footer>
+</body>
+</html>
